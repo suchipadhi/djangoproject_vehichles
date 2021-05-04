@@ -26,14 +26,14 @@ class Vehicles(models.Model):
 
     def get_update_vehicle_url(self):
         """
-        Update and return a new instance, given the validated data.
-        :return:
+        Update and return a new  instance, given the validated data.
+        :return: URI for location update
         """
         return reverse('location-update', kwargs={"pk": self.pk})
 
     def get_delete_vehicle_url(self):
         """
         Delete and return a new instance, given the validated data.
-        :return:
+        :return:URI for vehicle delete
         """
         return reverse('vehicle-delete', kwargs={"pk": self.pk})

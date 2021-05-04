@@ -19,16 +19,16 @@ class VehicleDeleteView(generics.DestroyAPIView):
     def get_serializer_class(self):
         """
 
-        :return:
+        :return: VehicleRegistrationSerializer
         """
         return VehicleRegistrationSerializer
 
     def destroy(self, request, *args, **kwargs):
         """
 
-        :param request:
+        :param request: DELETE
         :param args:
-        :param kwargs:
+        :param kwargs:vehicle_id
         :return:
         """
         try:
@@ -50,7 +50,7 @@ class VehicleRegistrationView(generics.CreateAPIView):
     def get_queryset(self):
         """
 
-        :return:
+        :return: vehicle objects
         """
         vehicle_id = self.request.data
         return Vehicles.objects.filter(id=vehicle_id)
@@ -58,17 +58,17 @@ class VehicleRegistrationView(generics.CreateAPIView):
     def get_serializer_class(self):
         """
 
-        :return:
+        :return:VehicleRegistrationSerializer
         """
         return VehicleRegistrationSerializer
 
     def create(self, request, *args, **kwargs):
         """
 
-        :param request:
+        :param request: POST
         :param args:
         :param kwargs:
-        :return:
+        :return: vehicle object
         """
         try:
             vehicle_id = self.request.data.get('id', None)
@@ -90,16 +90,16 @@ class VehicleLocationUpdateView(generics.UpdateAPIView):
     def get_serializer_class(self):
         """
 
-        :return:
+        :return:VehicleRegistrationSerializer
         """
         return VehicleRegistrationSerializer
 
     def update(self, request, *args, **kwargs):
         """
 
-        :param request:
+        :param request: PUT
         :param args:
-        :param kwargs:
+        :param kwargs:vehicle id
         :return:
         """
         try:
